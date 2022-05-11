@@ -11,5 +11,7 @@ public interface IProductService extends IGeneralService<Product> {
 
     List<ProductDTO> findAllProductDTO();
 
+    List<ProductDTO> findAllProductLock();
+
     Optional<ProductDTO> findProductDTOById(Long id);
 }

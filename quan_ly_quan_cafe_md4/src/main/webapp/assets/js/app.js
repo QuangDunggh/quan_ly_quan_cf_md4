@@ -75,11 +75,3 @@ class Category{
         this.name = name;
     }
 }
-
-class Recipe {
-    constructor(id,name) {
-        this.id = id;
-        this,name = name;
-    }
-
-}

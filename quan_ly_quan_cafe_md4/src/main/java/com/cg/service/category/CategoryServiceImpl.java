@@ -40,4 +40,14 @@ public class CategoryServiceImpl implements ICategoryService{
     public List<CategoryDTO> findAllCategoriesDTO() {
         return categoryRepository.findAllCategoriesDTO();
     }
+
+    @Override
+    public List<CategoryDTO> findAllCategoriesDTOLock() {
+        return categoryRepository.findAllCategoriesDTOLock();
+    }
+
+    @Override
+    public CategoryDTO findCategoryDTOById(Long id) {
+        return categoryRepository.findCategoryDTOById(id);
+    }
 }

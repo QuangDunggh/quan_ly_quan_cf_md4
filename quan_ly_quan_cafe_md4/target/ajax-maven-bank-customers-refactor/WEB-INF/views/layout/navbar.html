@@ -2,7 +2,7 @@
 <th:block th:fragment="navbar">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">COKECOLE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -12,29 +12,33 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Manger staff</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Order</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown link
+                           Manager about staff and product
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="/">List product</a></li>
+                            <li><a class="dropdown-item" href="/listProductLock">List Product Lock</a></li>
+                            <li><a class="dropdown-item" href="/listCategories">List Category Product</a></li>
+                            <li><a class="dropdown-item" href="#">List Category Product Lock</a></li>
+                            <li><a class="dropdown-item" href="#">List staff</a></li>
+                            <li><a class="dropdown-item" href="#">List staff lock</a></li>
+                            <li><a class="dropdown-item" href="#">List category staff</a></li>
                         </ul>
                     </li>
                 </ul>
-                <button class="btn btn-outline-success me-2 btn-createProduct" type="button">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Add New Drinks</span>
-                </button>
             </div>
         </div>
         <div class="container-fluid">
+            <button class="btn btn-outline-success me-2 btn-createProduct" type="button">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add New Drinks</span>
+            </button>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>

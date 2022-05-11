@@ -42,6 +42,11 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
+    public List<ProductDTO> findAllProductLock() {
+        return productRepository.findAllProductLock();
+    }
+
+    @Override
     public Optional<ProductDTO> findProductDTOById(Long id) {
         return productRepository.findProductDTOById(id);
     }

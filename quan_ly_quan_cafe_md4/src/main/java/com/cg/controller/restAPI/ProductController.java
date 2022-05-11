@@ -40,6 +40,15 @@ public class ProductController {
         return new ResponseEntity<>(productDTOS,HttpStatus.OK);
     }
 
+    @GetMapping("/lockProduct")
+    public ResponseEntity<?> findAllLockProduct() {
+        List<ProductDTO> productDTOS = productService.findAllProductLock();
+        if(productDTOS.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(productDTOS,HttpStatus.OK);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable("id") Long id) {
         Optional<ProductDTO> productDTO = productService.findProductDTOById(id);
@@ -98,5 +107,22 @@ public class ProductController {
         }
 
         return new ResponseEntity<>("Not found product", HttpStatus.NOT_FOUND);
+    }
+
+    @PutMapping("/unSuspension/{id}")
+    public ResponseEntity<?> unSuspension(@PathVariable("id") Long id) {
+        Optional<Product> product = productService.findById(id);
+        if(product.isPresent()) {
+            product.get().setDeleted(false);
+            productService.save(product.get());
+            ProductDTO productDTO = new ProductDTO();
+            productDTO.setId(product.get().getIdProduct());
+            productDTO.setNameProduct(product.get().getNameProduct());
+            productDTO.setPrice(product.get().getPrice());
+            productDTO.setDescription(product.get().getDescription());
+            return new ResponseEntity<>(productDTO,HttpStatus.OK);
+
+        }
+        return new ResponseEntity<>("Can not find product",HttpStatus.NOT_FOUND);
     }
 }

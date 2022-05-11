@@ -30,7 +30,17 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
             "p.category.nameCategory," +
             "p.description)" +
             "FROM Product p " +
-            "WHERE p.deleted = false " +
-            "AND p.idProduct=:id")
+            "WHERE p.deleted = true ")
+    List<ProductDTO> findAllProductLock();
+
+    @Query("SELECT new com.cg.model.dto.ProductDTO(" +
+            "p.idProduct, " +
+            "p.nameProduct," +
+            "p.price," +
+            "p.category.idCategory," +
+            "p.category.nameCategory," +
+            "p.description)" +
+            "FROM Product p " +
+            "WHERE p.idProduct=:id")
     Optional<ProductDTO> findProductDTOById(@Param("id") Long id);
 }
