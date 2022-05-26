@@ -21,11 +21,11 @@ class App {
             })
         }
 
-        static ShowConfirmSuspend() {
+        static ShowConfirmSuspend(t) {
             return Swal.fire({
                 position: 'middle',
                 icon: 'warning',
-                title: "Are you sure suspend this client?",
+                title: t,
                 showCancelButton: true,
                 confirmButtonText: 'Yes, delete it!',
                 cancelButtonText: 'No, cancel!',
@@ -74,4 +74,26 @@ class Category{
         this.id = id;
         this.name = name;
     }
+}
+
+class Order{
+    constructor(id,totalBill,createAt) {
+        this.id = id;
+        this.totalBill = totalBill;
+        this.createAt = createAt
+    }
+}
+
+class OrderItem {
+    constructor(id,idProduct,nameProduct,categoryName,idOrder,price,quantity,total) {
+        this.id = id;
+        this.idProduct = idProduct;
+        this.nameProduct = nameProduct;
+        this.categoryName = categoryName;
+        this.idOrder = idOrder;
+        this.price = price;
+        this.quantity = quantity;
+        this.total = total;
+    }
+
 }

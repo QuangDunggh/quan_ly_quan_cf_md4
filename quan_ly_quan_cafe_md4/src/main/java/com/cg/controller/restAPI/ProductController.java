@@ -4,6 +4,7 @@ import com.cg.model.Product;
 import com.cg.model.dto.ProductDTO;
 import com.cg.service.category.ICategoryService;
 import com.cg.service.product.IProductService;
+import com.cg.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +26,8 @@ public class ProductController {
     @Autowired
     private ICategoryService categoryService;
 
-//    @Autowired
-//    private AppUtils appUtils;
+    @Autowired
+    private AppUtils appUtils;
 
 
     @GetMapping("/")

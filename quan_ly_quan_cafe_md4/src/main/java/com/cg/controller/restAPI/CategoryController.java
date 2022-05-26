@@ -3,6 +3,7 @@ package com.cg.controller.restAPI;
 import com.cg.model.Category;
 import com.cg.model.dto.CategoryDTO;
 import com.cg.service.category.ICategoryService;
+import com.cg.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,9 @@ public class CategoryController {
 
     @Autowired
     private ICategoryService categoryService;
+
+    @Autowired
+    private AppUtils appUtils;
 
     @GetMapping("/")
     public ResponseEntity<?> showListCategories() {
